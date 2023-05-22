@@ -13,3 +13,12 @@ library(plotly)
 data_1 <- diamonds
 data_2 <- mpg
 ```
+
+```{r}
+ggplot(data_2, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() + 
+  labs(x = "Engine Displacement (L)",
+       y = "Fuel Comsumption (miles/gallon)",
+       title = "Fuel Economy Data") + 
+  scale_color_manual(values = c("peru", "pink", "plum", "red", "black", "blue", "green"))
+```
