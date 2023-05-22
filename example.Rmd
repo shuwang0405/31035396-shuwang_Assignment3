@@ -15,6 +15,7 @@ data_2 <- mpg
 ```
 
 
+
 ```{r}
 ggplot(data_1, mapping = aes(x = color)) + 
   geom_histogram(stat = "count", 
@@ -26,5 +27,13 @@ ggplot(data_1, mapping = aes(x = color)) +
   labs(x = "COLOR", y = "FREQUENCY", title = "HISTOGRAM OF FREQUENCY BY COLOR") + 
   theme_bw() + 
   theme(legend.position = "bottom")
+
+
+ggplot(data_2, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() + 
+  labs(x = "Engine Displacement (L)",
+       y = "Fuel Comsumption (miles/gallon)",
+       title = "Fuel Economy Data") + 
+  scale_color_manual(values = c("peru", "pink", "plum", "red", "black", "blue", "green"))
 
 ```
