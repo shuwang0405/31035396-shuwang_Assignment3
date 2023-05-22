@@ -13,3 +13,18 @@ library(plotly)
 data_1 <- diamonds
 data_2 <- mpg
 ```
+
+
+```{r}
+ggplot(data_1, mapping = aes(x = color)) + 
+  geom_histogram(stat = "count", 
+                 mapping = aes(fill = clarity), 
+                 position = "dodge",
+                 alpha = 0.8) + 
+##(Option 1)  labs(x = "COLOR", y = "FREQUENCY", title = "HISTOGRAM OF FREQUENCY BY COLOR")
+##(Option 2)   xlab("COLOR") + ylab("FREQUENCY") + ggtitle("HISTOGRAM OF FREQUENCY BY COLOR")
+  labs(x = "COLOR", y = "FREQUENCY", title = "HISTOGRAM OF FREQUENCY BY COLOR") + 
+  theme_bw() + 
+  theme(legend.position = "bottom")
+
+```
